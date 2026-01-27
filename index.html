@@ -43,13 +43,12 @@
         <h2>About Agriculture</h2>
         <p>
             Agriculture plays a vital role in feeding the world.
-            With the use of modern technology, efficient irrigation,
-            and organic methods, farming can become more productive
-            and sustainable.
+            With modern technology and organic methods, farming
+            can become more productive and sustainable.
         </p>
         <p>
-            Our goal is to guide farmers with the right knowledge,
-            tools, and techniques for better crop yield.
+            Our goal is to guide farmers with the right knowledge
+            and techniques for better crop yield.
         </p>
     </div>
 
@@ -58,43 +57,52 @@
     </div>
 </section>
 
-<!-- FEATURES -->
+
 <section class="features">
 
-    <div class="feature-card">
+    <div class="feature-card" data-pos="0">
         <img src="img7.jpg">
         <h3>Organic Farming</h3>
-        <p>
-            Natural farming methods that improve soil health
-            and produce chemical-free crops.
-        </p>
+        <p>Natural farming methods.</p>
     </div>
 
-    <div class="feature-card">
+    <div class="feature-card" data-pos="1">
         <img src="img.2.jpg">
         <h3>Smart Irrigation</h3>
-        <p>
-            Advanced irrigation systems that save water
-            and increase crop productivity.
-        </p>
+        <p>Advanced irrigation systems.</p>
     </div>
 
-    <div class="feature-card">
+    <div class="feature-card" data-pos="2">
         <img src="img3.jpg">
         <h3>Modern Machinery</h3>
-        <p>
-            Use of modern tools and equipment to reduce
-            labor and improve efficiency.
-        </p>
+        <p>Modern farming tools.</p>
     </div>
 
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2025 AgroFarm | Farming & Agriculture</p>
+    <p>© 2025 AgroFarm</p>
 </footer>
+
+<!-- ✅ FIXED JS -->
+<script>
+    const cards = document.querySelectorAll(".feature-card");
+    let locked = false;
+
+    cards.forEach(card => {
+        card.addEventListener("mouseenter", () => {
+            if (locked) return;
+            locked = true;
+
+            const parent = card.parentElement;
+            parent.appendChild(card);
+
+            setTimeout(() => {
+                locked = false;
+            }, 600);
+        });
+    });
+</script>
 
 </body>
 </html>
-
